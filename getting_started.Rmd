@@ -1,0 +1,58 @@
+---
+title: "Getting Started"
+author: "Aaron Gullickson"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# This is an R code chunk that sets up some default parameters, loads the data,
+# and loads the ggplot library. DO NOT EDIT THIS CODE CHUNK. Whenever you start
+# working on your project, you should use the green play button on the right,
+# to load all the data and settings here.
+knitr::opts_chunk$set(echo = TRUE, fig.height=4)
+library(ggplot2)
+load("crimes.RData")
+load("earnings.RData")
+load("movies.RData")
+load("politics.RData")
+load("popularity.RData")
+load("sex.RData")
+load("titanic.RData")
+```
+
+## Instructions
+
+Please do not modify anything above this section, except for your name in the author field at the top.
+
+The purpose of this assignment is to **confirm** that you have created an account on RStudio Cloud and are able to knit an R Markdown document. Change the text in the biography section below, delete these instructions, and then knit the document. Download the resulting PDF file and upload it to Canvas to complete this assignment.
+
+This is a new paragraph.
+
+## Biography
+
+Hi I am Aaron Gullickson, an associate professor at UO. I like dinosaurs!
+
+## Using R Code Chunks
+
+```{r}
+#We can use R code chunks to write R code and have the output in our knitted document.
+mean(earnings$wages)
+tapply(earnings$wages, earnings$gender, mean)
+cor(earnings$wages, earnings$age)
+```
+
+## Here is a pretty picture
+
+```{r, fig.cap="Comparative boxplots of movie runtime by genre. Outliers are shown in red."}
+# This is an R code chunk. The R code here is producing a figure that will be
+# displayed when the R Markdown document is knit. You can get a preview of this
+# figure by hitting the green play button on the right. You can use this R code
+# chunk as a template for your own by copying and pasting, but you should
+# replace the code with proper code for the assignment. Also remember to change
+# the caption in the code chunk header above.
+ggplot(movies, aes(x=reorder(Genre, Runtime, median), y=Runtime))+
+  geom_boxplot(fill="skyblue", outlier.color = "red")+
+  coord_flip()+
+  labs(x=NULL, y="runtime in minutes")+
+  theme_bw()
+```
