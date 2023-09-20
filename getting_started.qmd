@@ -28,7 +28,7 @@ load("titanic.RData")
 
 Please do not modify anything above this section, except for your name in the author field at the top.
 
-The purpose of this assignment is to **confirm** that you have created an account on RStudio Cloud and are able to knit an R Markdown document. Change the text in the biography section below, delete these instructions, and then knit the document. Download the resulting PDF file and upload it to Canvas to complete this assignment.
+The purpose of this assignment is to **confirm** that you have created an account on Posit Cloud and are able to render a [Quarto](https://quarto.org) document to PDF. Change the text in the biography section below, delete these instructions, and then render the document using the "Render" button at the top. Download the resulting PDF file and upload it to Canvas to complete this assignment.
 
 This is a new paragraph.
 
